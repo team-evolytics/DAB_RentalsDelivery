@@ -1,9 +1,10 @@
 
-console.log('INJECTOR IS WORKING');
+// console.log('INJECTOR IS WORKING');
 
 var launchInterval_830 = setInterval(function(){
 
-    if($('#tabbed_booking_widget__desktop > div.row > div > button.tabbed_booking_widget__desktop__product.tabbed_booking_widget__product.col-xs-2.active').length > 0){
+    if($('#tabbed_booking_widget__desktop > div.row > div > button.tabbed_booking_widget__desktop__product.tabbed_booking_widget__product.col-xs-2.active').length > 0
+    || $('#rentals-landing-page > div > div > div.rentals_filters__booking_type').length > 0){
       runTest_830();
       clearInterval(launchInterval_830);
     }
@@ -47,7 +48,16 @@ function createElements_830(){
         </div>
     `
 
-    $e.insertAfter('#tabbed_booking_widget_rentals_winter_1 > div > div > div.rentals_filters__booking_type > div');
+    // fix this section here
+
+    let path = window.location.pathname;
+
+    if (path === '/'){
+        $e.insertAfter('#tabbed_booking_widget_rentals_winter_1 > div > div > div.rentals_filters__booking_type > div');
+        $e.insertAfter('#rentals-booking-widget > div > div.rentals_booking_widget__form > div:nth-child(1) > div.rentals_filters__booking_type > div');
+    } else if (path === '/plan-your-trip/rentals/winter-equipment.aspx'){
+        $e.insertAfter('#rentals-landing-page > div > div > div.rentals_filters__booking_type > div')
+    } 
     $e.append($deliverContainer);
 }
 

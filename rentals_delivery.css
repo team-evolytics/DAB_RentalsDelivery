@@ -38,13 +38,13 @@
     position: relative;
     display: inline-block;
     left: 5.5px;
-    top: -12.4px;
+    top: -12px;
 }
 .wheel-2{
     position: relative;
     display: inline-block;
     left: 12px;
-    top: -12.4px;
+    top: -12px;
 }
 
 .arrow-up {
