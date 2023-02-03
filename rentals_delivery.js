@@ -51,14 +51,42 @@ function createElements_830(){
     // fix this section here
 
     let path = window.location.pathname;
+    let website = window.location.host;
+    let x_len = window.innerWidth;
 
-    if (path === '/'){
-        $e.insertAfter('#tabbed_booking_widget_rentals_winter_1 > div > div > div.rentals_filters__booking_type > div');
-        $e.insertAfter('#rentals-booking-widget > div > div.rentals_booking_widget__form > div:nth-child(1) > div.rentals_filters__booking_type > div');
-    } else if (path === '/plan-your-trip/rentals/winter-equipment.aspx'){
-        $e.insertAfter('#rentals-landing-page > div > div > div.rentals_filters__booking_type > div')
-    } 
+    if (website === 'www.epicmountainrentals.com'){
+        // more logic
+        if (path === '/'){
+            if (x_len > 767){
+                $e.insertAfter('#rentals-booking-widget > div > div.rentals_booking_widget__form > div:nth-child(1) > div.rentals_filters__booking_type > div');
+            } else {
+                $e.insertAfter('#rentals-booking-widget > div > div.rentals_booking_widget__form > div:nth-child(1) > div.rentals_filters__booking_type');
+            }
+        } else if (path === '/delivery/ski-rental-delivery.aspx'){
+            if (x_len > 767){
+                $e.insertAfter('#rentals-booking-widget > div > div.rentals_booking_widget__form > div:nth-child(1) > div.rentals_filters__booking_type > div');
+            } else {
+                $e.insertAfter('#rentals-booking-widget > div > div.rentals_booking_widget__form > div:nth-child(1) > div.rentals_filters__booking_type > div');
+            }
+        }
+    } else {
+        if (path === '/'){
+            if (x_len > 767){
+                $e.insertAfter('#tabbed_booking_widget_rentals_winter_1 > div > div > div.rentals_filters__booking_type > div');
+            } else {
+                $e.insertAfter('#tabbed_booking_widget_rentals_winter_2 > div > div > div.rentals_filters__booking_type > div');
+            }
+        } else if (path === '/plan-your-trip/rentals/winter-equipment.aspx'){
+            if (x_len > 767){
+                $e.insertAfter('#rentals-landing-page > div > div > div.rentals_filters__booking_type > div');
+            } else {
+                $e.insertAfter('#rentals-landing-page > div > div > div.rentals_filters__booking_type > div');
+            }
+        }
+    }
+
     $e.append($deliverContainer);
+
 }
 
 function changeCellColor_830(){

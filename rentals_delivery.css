@@ -1,88 +1,186 @@
 
-.dab_parent_container_830{
-    height: 93px;
-    width: 222px;
+/* DESKTOP AND TABLET */
 
-    position: relative;
-    top: -16px;
-    right: 5px;
+@media screen and (min-width: 767px){
+    .dab_parent_container_830{
+        height: 93px;
+        width: 222px;
+        position: relative;
+        top: -16px;
+        right: 5px;
+    }
+    .text_container_s{
+        height: 85px;
+        width: 222px;
+        top: 10px;
+        padding: 10px;
+        gap: 4px;
 
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        flex: none;
+        order: 1;
+        align-self: stretch;
+        flex-grow: 0;
+
+        box-shadow: 0px 2px 3px 1px #cecece;
+    }
+    .truck_icon_s{
+        width: 28px;
+        display: inline-block;
+    }
+    .truck-body{
+        position: relative;
+    }
+    .wheel-1{
+        position: relative;
+        display: inline-block;
+        left: 5.5px;
+        top: -12px;
+    }
+    .wheel-2{
+        position: relative;
+        display: inline-block;
+        left: 12px;
+        top: -12px;
+    }
+    .arrow-up {
+        width: 16px; 
+        height: 8px; 
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-bottom: 8px solid black;
+        margin-left: 10px;
+    }
+    .modal_txt_banner{
+        width: 137px;
+        height: 21px;
+        font-family: Prompt;
+        font-style: normal;
+        color: #FFFFFF;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 150%;
+        letter-spacing: 0.04em;
+        flex: none;
+        order: 1;
+        flex-grow: 0;
+        display: inline-block;
+        position: relative;
+        top: -18px;
+        left: 4px;
+    }
+    .modal_txt_content{
+        width: 202px;
+        height: 40px;
+        font-family: Prompt;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 13px;
+        line-height: 150%;
+        color: #FFFFFF;
+        position: relative;
+        top: -18px;
+    }
 }
-.text_container_s{
-    height: 85px;
-    width: 222px;
-    top: 10px;
-    padding: 10px;
-    gap: 4px;
 
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+/* TABLET */
 
-    flex: none;
-    order: 1;
-    align-self: stretch;
-    flex-grow: 0;
 
-    box-shadow: 0px 2px 3px 1px #cecece;
-}
 
-.truck_icon_s{
-    width: 28px;
-    display: inline-block;
-}
-.truck-body{
-    position: relative;
-}
-.wheel-1{
-    position: relative;
-    display: inline-block;
-    left: 5.5px;
-    top: -12px;
-}
-.wheel-2{
-    position: relative;
-    display: inline-block;
-    left: 12px;
-    top: -12px;
-}
+/* MOBILE */ 
+@media screen and (max-width: 767px){
+    .dab_parent_container_830{
+        height: 93px;
+        width: 100%;
+        position: relative;
+        top: -8px;
+    }
+    .text_container_s{
+        height: 85px;
+        /* width: 222px; */
+        top: 10px;
+        padding: 10px;
+        gap: 4px;
 
-.arrow-up {
-    width: 16px; 
-    height: 8px; 
-    border-left: 8px solid transparent;
-    border-right: 8px solid transparent;
-    border-bottom: 8px solid black;
-    margin-left: 10px;
-  }
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
 
-.modal_txt_banner{
-    width: 137px;
-    height: 21px;
-    font-family: Prompt;
-    font-style: normal;
-    color: #FFFFFF;
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 150%;
-    letter-spacing: 0.04em;
-    flex: none;
-    order: 1;
-    flex-grow: 0;
-    display: inline-block;
-    position: relative;
-    top: -18px;
-    left: 4px;
-}
-.modal_txt_content{
-    width: 202px;
-    height: 40px;
-    font-family: Prompt;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 13px;
-    line-height: 150%;
-    color: #FFFFFF;
-    position: relative;
-    top: -18px;
+        flex: none;
+        order: 1;
+        align-self: stretch;
+        flex-grow: 0;
+
+        box-shadow: 0px 2px 3px 1px #cecece;
+    }
+    .truck_icon_s{
+        width: 28px;
+        display: inline-block;
+    }
+    .truck-body{
+        position: relative;
+    }
+    .wheel-1{
+        position: relative;
+        display: inline-block;
+        left: 5.5px;
+        top: -12px;
+    }
+    .wheel-2{
+        position: relative;
+        display: inline-block;
+        left: 12px;
+        top: -12px;
+    }
+    .arrow-up {
+        width: 16px; 
+        height: 8px; 
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-bottom: 8px solid black;
+        margin-left: 10px;
+    }
+    .modal_txt_banner{
+        width: 137px;
+        height: 21px;
+        font-family: Prompt;
+        font-style: normal;
+        color: #FFFFFF;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 150%;
+        letter-spacing: 0.04em;
+        flex: none;
+        order: 1;
+        flex-grow: 0;
+        display: inline-block;
+        position: relative;
+        top: -18px;
+        left: 4px;
+    }
+    .modal_txt_content{
+        /* width: 202px; */
+        height: 40px;
+        font-family: Prompt;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 13px;
+        line-height: 150%;
+        color: #FFFFFF;
+        position: relative;
+        top: -18px;
+    }
+
+    /* redesigning widget */
+
+    /*
+    .rentals_tabbed_booking_widget .rentals_filters__radio_group {
+        padding-top: 10px;
+        flex-direction: column;
+    }
+    */
+
 }
