@@ -14,6 +14,11 @@ var launchInterval_830 = setInterval(function(){
 function runTest_830(){
     createElements_830();
     changeCellColor_830();
+
+    let website = window.location.host;
+    if (website === 'www.epicmountainrentals.com'){
+        createBigBrother_830();
+    }
 }
 
 function createElements_830(){
@@ -103,6 +108,9 @@ function changeCellColor_830(){
 }
 
 function createBigBrother_830(){
+
+    $('#dab_parent_container_830').css({'top':'-4px'});
+
     const targetNode = $('#rentals-booking-widget > div > div.rentals_booking_widget__form > div:nth-child(1)')[0];
     const config = {attributes: true, childList: true, subtree: true};
     const callback = (mutationList, observer) => {
@@ -112,6 +120,7 @@ function createBigBrother_830(){
             if (mutation.type === 'childList' && $('#dab_parent_container_830').length === 0){
                 console.log('adhasassa');
                 runTest_830();
+                $('#dab_parent_container_830').css({'top':'-4px'});
             }
 
         }
@@ -120,4 +129,4 @@ function createBigBrother_830(){
     observer.observe(targetNode, config);
 }
 
-createBigBrother_830();
+// createBigBrother_830();
