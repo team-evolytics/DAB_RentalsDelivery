@@ -1,11 +1,25 @@
 
 // console.log('INJECTOR IS WORKING');
 
+var ctaAdded = false;
+
 var launchInterval_830 = setInterval(function(){
 
     if($('#tabbed_booking_widget__desktop > div.row > div > button.tabbed_booking_widget__desktop__product.tabbed_booking_widget__product.col-xs-2.active').length > 0
-    || $('#rentals-landing-page > div > div > div.rentals_filters__booking_type').length > 0){
-      runTest_830();
+    || ( $("#resortSelect").length > 0)){
+    
+      if(window.digitalData.page.attributes.resort !== "Epic Mountain Rentals"){
+         runTest_830();
+      }
+
+      $("#resortSelect").change(function(e){
+        setTimeout(200);
+        console.log(e);
+        if($(".rentals_filters__radio_group").length && !$("#dab_parent_container_830").length && $("#resortSelect").val() !== ''){
+            runTest_830();
+        }
+        console.log("changing");
+      })
       clearInterval(launchInterval_830);
     }
 }, 250);
@@ -13,6 +27,7 @@ var launchInterval_830 = setInterval(function(){
 function runTest_830(){
     createElements_830();
     changeCellColor_830();
+    ctaAdded = true;
 }
 
 function createElements_830(){
