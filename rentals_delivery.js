@@ -4,7 +4,8 @@
 var launchInterval_830 = setInterval(function(){
 
     if($('#tabbed_booking_widget__desktop > div.row > div > button.tabbed_booking_widget__desktop__product.tabbed_booking_widget__product.col-xs-2.active').length > 0
-    || $('#rentals-landing-page > div > div > div.rentals_filters__booking_type').length > 0){
+    || $('#rentals-landing-page > div > div > div.rentals_filters__booking_type').length > 0
+    || $('#rentals-booking-widget > div > div.rentals_booking_widget__form > div:nth-child(1) > div.rentals_filters__booking_type > div.rentals_filters__radio_group').length > 0){
       runTest_830();
       clearInterval(launchInterval_830);
     }
@@ -63,11 +64,7 @@ function createElements_830(){
                 $e.insertAfter('#rentals-booking-widget > div > div.rentals_booking_widget__form > div:nth-child(1) > div.rentals_filters__booking_type');
             }
         } else if (path === '/delivery/ski-rental-delivery.aspx'){
-            if (x_len > 767){
-                $e.insertAfter('#rentals-booking-widget > div > div.rentals_booking_widget__form > div:nth-child(1) > div.rentals_filters__booking_type > div');
-            } else {
-                $e.insertAfter('#rentals-booking-widget > div > div.rentals_booking_widget__form > div:nth-child(1) > div.rentals_filters__booking_type > div');
-            }
+            $e.insertAfter('#rentals-booking-widget > div > div.rentals_booking_widget__form > div:nth-child(1) > div.rentals_filters__booking_type > div');            
         }
     } else {
         if (path === '/'){
@@ -77,11 +74,7 @@ function createElements_830(){
                 $e.insertAfter('#tabbed_booking_widget_rentals_winter_2 > div > div > div.rentals_filters__booking_type > div');
             }
         } else if (path === '/plan-your-trip/rentals/winter-equipment.aspx'){
-            if (x_len > 767){
-                $e.insertAfter('#rentals-landing-page > div > div > div.rentals_filters__booking_type > div');
-            } else {
-                $e.insertAfter('#rentals-landing-page > div > div > div.rentals_filters__booking_type > div');
-            }
+            $e.insertAfter('#rentals-landing-page > div > div > div.rentals_filters__booking_type > div');
         }
     }
 
@@ -98,7 +91,7 @@ function changeCellColor_830(){
         , 'www.skicb.com' : '#a6192e'
         , 'www.beavercreek.com' : '#176999'
         , 'www.vail.com' : '#006cd1'
-        , 'www.parkcitymountain' : '#99191a'
+        , 'www.parkcitymountain.com' : '#99191a'
         , 'www.northstarcalifornia.com' : '#2f5b7b'
         , 'www.skiheavenly.com' : '#971116'
         , 'www.whistlerblackcomb.com' : '#bf2c37'
@@ -107,4 +100,39 @@ function changeCellColor_830(){
 
     $('.text_container_s').css({'background-color':color_dictionary[website]});
     $('.arrow-up').css({'border-bottom':'8px solid ' + color_dictionary[website]});
+}
+
+function mtnRentals_830(){
+    let website = window.location.host;
+
+    if (website === 'www.epicmountainrentals.com' && $('dab_parent_container_83').length === 0){
+
+
+    
+        let path = window.location.pathname;
+        let x_len = window.innerWidth;
+
+        $('#resortSelect').on('click', () => {
+
+        });
+    }
+}
+
+
+function createBigBrother_830(){
+    // const targetNode = $('#checkoutProgrssBar')[0];
+    // const targetNode = $('#checkoutProgrssBar > div')[0];
+    const targetNode = $('#checkoutProgrssBar > div > div.checkout-progrss-bar__step_number > div')[0];
+    // const targetNode = $('')
+    const config = {attributes: true, childList: true, subtree: true};
+    const callback = (mutationList, observer) => {
+        for (const mutation of mutationList) {
+            if(deleteValidTxt($('h3[class*="productdetails sctexteditor"]'))){
+                break;
+            }
+            console.log('observed');
+        }
+    }
+    const observer = new MutationObserver(callback);
+    observer.observe(targetNode, config);
 }
