@@ -102,37 +102,22 @@ function changeCellColor_830(){
     $('.arrow-up').css({'border-bottom':'8px solid ' + color_dictionary[website]});
 }
 
-function mtnRentals_830(){
-    let website = window.location.host;
-
-    if (website === 'www.epicmountainrentals.com' && $('dab_parent_container_83').length === 0){
-
-
-    
-        let path = window.location.pathname;
-        let x_len = window.innerWidth;
-
-        $('#resortSelect').on('click', () => {
-
-        });
-    }
-}
-
-
 function createBigBrother_830(){
-    // const targetNode = $('#checkoutProgrssBar')[0];
-    // const targetNode = $('#checkoutProgrssBar > div')[0];
-    const targetNode = $('#checkoutProgrssBar > div > div.checkout-progrss-bar__step_number > div')[0];
-    // const targetNode = $('')
+    const targetNode = $('#rentals-booking-widget > div > div.rentals_booking_widget__form > div:nth-child(1)')[0];
     const config = {attributes: true, childList: true, subtree: true};
     const callback = (mutationList, observer) => {
+
         for (const mutation of mutationList) {
-            if(deleteValidTxt($('h3[class*="productdetails sctexteditor"]'))){
-                break;
+            console.log(mutation);
+            if (mutation.type === 'childList' && $('#dab_parent_container_830').length === 0){
+                console.log('adhasassa');
+                runTest_830();
             }
-            console.log('observed');
+
         }
     }
     const observer = new MutationObserver(callback);
     observer.observe(targetNode, config);
 }
+
+createBigBrother_830();
