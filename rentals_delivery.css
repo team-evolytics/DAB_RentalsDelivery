@@ -1,7 +1,7 @@
 
 /* DESKTOP AND TABLET */
 
-@media screen and (min-width: 767px){
+@media screen and (min-width: 1200px){
     .dab_parent_container_830{
         height: 93px;
         width: 222px;
@@ -182,7 +182,7 @@
 */
 
 /* MOBILE */ 
-@media screen and (max-width: 767px){
+@media screen and (max-width: 1200px){
     .dab_parent_container_830{
         height: 93px;
         width: 100%;
@@ -266,24 +266,12 @@
         top: -18px;
     }
 
-    /* replace pills with radio */
+    /* RESORT SITES */
 
-    .rentals_filters__radio+.radio {
-        margin-top: 0;
-        margin-bottom: 25px;
-        margin-left: 5px;
-    }
-    
+    /* replace pills with radio  on HOMEPAGE */
     .rentals_tabbed_booking_widget .rentals_filters__radio--mobile-button input~h3:before {
         display: block !important;
     }
-    
-    .hidden-xs-dab {
-
-        display: block !important;
-    }
-
-
     .rentals_tabbed_booking_widget .rentals_filters__radio--mobile-button input~h3 {
         background-color: transparent;
         border-radius: 0;
@@ -309,6 +297,55 @@
         margin-right: 10px;
         margin-left: 5px;
         margin-bottom: 25px;
+    }
+    /* replace pills with radio  on HOMEPAGE */
+    .rentals_equipment_selector .rentals_filters__radio--mobile-button input:checked~h3 {
+        background-color: transparent;
+        color: black;
+    }   
+    .rentals_equipment_selector .rentals_filters__radio--mobile-button input~h3 {
+        background-color: transparent;
+        border-radius: 0em;
+        /* color: #2d2d2d; */
+        color: black;
+        padding: 0;
+        text-align: left;
+        padding-left: 30px;
+    }
+    .rentals_equipment_selector .rentals_filters__radio--mobile-button:first-child {
+        margin-right: 10px;
+        margin-left: 5px;
+        margin-bottom: 25px;
+    }
+
+    /* RESORT SITES */
+
+    /* EPIC MOUNTAIN RENTALS */
+
+    .rentals_booking_widget .rentals_filters__radio--mobile-button input:checked~h3 {
+        background-color: transparent;
+        color: black;
+    }
+    .rentals_booking_widget .rentals_filters__radio--mobile-button input~h3 {
+        background-color: transparent;
+        border-radius: 0;
+        /* color: #2d2d2d; */
+        color: black;
+        padding: 0;
+        text-align: left;
+        padding-left: 30px;
+    }
+    .rentals_booking_widget .rentals_filters__radio--mobile-button input~h3:before {
+        display: block !important;
+    }
+    .manually_move_buttons{
+        margin-right: 10px;
+        margin-left: 5px;
+        margin-bottom: 25px;
+    }
+    .rentals_booking_widget .rentals_filters__radio--mobile-button:first-child {
+        margin-right: 10px;
+        margin-left: 5px;
     }
 
 
