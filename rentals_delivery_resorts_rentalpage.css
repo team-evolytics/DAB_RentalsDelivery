@@ -1,7 +1,6 @@
 
 /* DESKTOP AND TABLET */
-
-@media screen and (min-width: 1200px){
+@media screen and (min-width: 767px){
     .dab_parent_container_830{
         height: 93px;
         width: 222px;
@@ -86,11 +85,7 @@
         letter-spacing: normal;
     }
 }
-
 /* TABLET */
-/* 767 < x_len < 992 */
-
-/*
 @media screen and (max-width: 992px){
     .dab_parent_container_830{
         height: 100%;
@@ -178,11 +173,8 @@
         letter-spacing: normal;
     }
 }
-
-*/
-
 /* MOBILE */ 
-@media screen and (max-width: 1200px){
+@media screen and (max-width: 767px){
     .dab_parent_container_830{
         height: 93px;
         width: 100%;
@@ -315,33 +307,5 @@
         margin-left: 5px;
         margin-bottom: 25px;
     }
-    /* RESORT SITES */
-
-    /* EPIC MOUNTAIN RENTALS */
-
-    .rentals_booking_widget .rentals_filters__radio--mobile-button input:checked~h3 {
-        background-color: transparent;
-        color: black;
-    }
-    .rentals_booking_widget .rentals_filters__radio--mobile-button input~h3 {
-        background-color: transparent;
-        border-radius: 0;
-        /* color: #2d2d2d; */
-        color: black;
-        padding: 0;
-        text-align: left;
-        padding-left: 30px;
-    }
-    .rentals_booking_widget .rentals_filters__radio--mobile-button input~h3:before {
-        display: block !important;
-    }
-    .manually_move_buttons{
-        margin-right: 10px;
-        margin-left: 5px;
-        margin-bottom: 25px;
-    }
-    .rentals_booking_widget .rentals_filters__radio--mobile-button:first-child {
-        margin-right: 10px;
-        margin-left: 5px;
-    }
 }
+/* RESORT SITES */

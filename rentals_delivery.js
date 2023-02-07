@@ -166,7 +166,7 @@ function clickInfoIcon_830(){
 */
 
 /* ------------------------------------------ RESORT SITES -------------------------------------------------- */
-/*
+
 var launchInterval_830 = setInterval(function(){
 
     if($('#tabbed_booking_widget__desktop > div.row > div > button.tabbed_booking_widget__desktop__product.tabbed_booking_widget__product.col-xs-2.active').length > 0
@@ -287,9 +287,10 @@ function clickInfoIcon_830(){
         $('#tabbed_booking_widget_rentals_winter_1 > div > div > div.rentals_filters__booking_type > div > label:nth-child(2) > h3.sctexteditor--selection > span > button > i').trigger('click');
     })
 }
-*/
+
 /* ------------------------------------------------------------------- EPIC MOUNTAIN RENTALS ----------------------------------------------- */
 
+/*
 var launchInterval_830_mtn = setInterval(function(){
 
     if($('#tabbed_booking_widget__desktop > div.row > div > button.tabbed_booking_widget__desktop__product.tabbed_booking_widget__product.col-xs-2.active').length > 0
@@ -356,7 +357,7 @@ function changeCellColor_830_mtn(){
 
 function createBigBrother_830_mtn(){
 
-    $('#dab_parent_container_830').css({'top':'-4px'});
+    $('#dab_parent_container_830').css({'top':'-12px'});
 
     const targetNode830 = $('#rentals-booking-widget > div > div.rentals_booking_widget__form > div:nth-child(1)')[0];
     const config830 = {attributes: true, childList: true, subtree: true};
@@ -365,7 +366,7 @@ function createBigBrother_830_mtn(){
             if (mutation830.type === 'childList' && $('#dab_parent_container_830').length === 0){
                 createElements_830_mtn();
                 runTest_830_mtn();
-                $('#dab_parent_container_830').css({'top':'-4px'});
+                $('#dab_parent_container_830').css({'top':'-12px'});
                 
                 revertButtons_mtn();
             }
@@ -409,4 +410,4 @@ function clickInfoIcon_830_mtn(){
     });
 }
 
-
+*/
