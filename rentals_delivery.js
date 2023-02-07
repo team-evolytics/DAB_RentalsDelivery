@@ -14,6 +14,7 @@ var launchInterval_830 = setInterval(function(){
 function runTest_830(){
     createElements_830();
     changeCellColor_830();
+    revertButtons();
 
     let website = window.location.host;
     if (website === 'www.epicmountainrentals.com'){
@@ -63,11 +64,7 @@ function createElements_830(){
     if (website === 'www.epicmountainrentals.com'){
         // more logic
         if (path === '/'){
-            if (x_len > 767){
-                $e.insertAfter('#rentals-booking-widget > div > div.rentals_booking_widget__form > div:nth-child(1) > div.rentals_filters__booking_type > div');
-            } else {
-                $e.insertAfter('#rentals-booking-widget > div > div.rentals_booking_widget__form > div:nth-child(1) > div.rentals_filters__booking_type');
-            }
+            $e.insertAfter('#rentals-booking-widget > div > div.rentals_booking_widget__form > div:nth-child(1) > div.rentals_filters__booking_type > div');
         } else if (path === '/delivery/ski-rental-delivery.aspx'){
             $e.insertAfter('#rentals-booking-widget > div > div.rentals_booking_widget__form > div:nth-child(1) > div.rentals_filters__booking_type > div');            
         }
@@ -111,22 +108,46 @@ function createBigBrother_830(){
 
     $('#dab_parent_container_830').css({'top':'-4px'});
 
-    const targetNode = $('#rentals-booking-widget > div > div.rentals_booking_widget__form > div:nth-child(1)')[0];
-    const config = {attributes: true, childList: true, subtree: true};
-    const callback = (mutationList, observer) => {
+    const targetNode830 = $('#rentals-booking-widget > div > div.rentals_booking_widget__form > div:nth-child(1)')[0];
+    const config830 = {attributes: true, childList: true, subtree: true};
+    const callback830 = (mutationList830, observer830) => {
 
-        for (const mutation of mutationList) {
-            console.log(mutation);
-            if (mutation.type === 'childList' && $('#dab_parent_container_830').length === 0){
-                console.log('adhasassa');
+        for (const mutation830 of mutationList830) {
+            // console.log(mutation);
+            if (mutation830.type === 'childList' && $('#dab_parent_container_830').length === 0){
                 runTest_830();
                 $('#dab_parent_container_830').css({'top':'-4px'});
             }
 
         }
     }
-    const observer = new MutationObserver(callback);
-    observer.observe(targetNode, config);
+    const observer830 = new MutationObserver(callback830);
+    observer830.observe(targetNode830, config830);
 }
 
 // createBigBrother_830();
+
+function revertButtons(){
+    let x_len = window.innerWidth;
+
+    if (x_len < 767) {
+        $('#tabbed_booking_widget_rentals_winter_2 > div > div > div.rentals_filters__booking_type > div > label:nth-child(1) > h3.visible-xs.c155__mobilecheckbox--v2').remove();
+        $('#tabbed_booking_widget_rentals_winter_2 > div > div > div.rentals_filters__booking_type > div > label:nth-child(2) > h3.visible-xs.c155__mobilecheckbox--v1').remove();
+
+        $('h3[class*="hidden-xs"]').removeClass('hidden-xs')
+
+        var infoIcon = `<i class="glyphicon icon-global-info" id="pickup_delivery_icon" tabindex="0" role="button" aria-label="Restrictions Info"></i>`
+        $('#tabbed_booking_widget_rentals_winter_2 > div > div > div.rentals_filters__booking_type > div.rentals_filters__radio_group > label:nth-child(2) > h3').append(infoIcon);
+    }
+    clickInfoIcon_830();
+}
+
+// revertButtons()
+
+$('#tabbed_booking_widget_rentals_winter_1 > div > div > div.rentals_filters__booking_type > div > label:nth-child(2) > h3.sctexteditor--selection > span > button > i')
+
+function clickInfoIcon_830(){
+    $('i[id*="pickup_delivery_icon"]').on('click', () => {
+        $('#tabbed_booking_widget_rentals_winter_1 > div > div > div.rentals_filters__booking_type > div > label:nth-child(2) > h3.sctexteditor--selection > span > button > i').trigger('click');
+    })
+}
